@@ -19,13 +19,9 @@ const Header = () => {
             />
           </Link>
 
-          <Link href="/">
-            Games
-            </Link>
+          <Link href="/">Games</Link>
 
-          <Link href="/profile">
-            Perfil
-          </Link>
+          <Link href="/profile">Perfil</Link>
         </nav>
 
         <div className="hidden sm:flex rounded-full p-1 shadow-md shadow-slate-500">
