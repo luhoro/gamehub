@@ -4,6 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 import { BsArrowRightCircleFill } from 'react-icons/bs'
+import SearchInput from "@/components/searchInput"
 
 const getGame = async () => {
   try {
@@ -42,11 +43,13 @@ export const Home = async () => {
                 quality={100}
                 fill={true}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw"
-                className="max-h-96 object-cover rounded lg opacity-50 hover:opacity-100 transition-all duration-200"
+                className="max-h-96 object-cover rounded lg opacity-60 hover:opacity-90 transition-all duration-200"
               />
             </div>
           </section>
         </Link>
+
+        <SearchInput />
       </Container>
     </main>
   )
