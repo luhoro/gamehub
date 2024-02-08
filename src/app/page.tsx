@@ -72,7 +72,7 @@ export const Home = async () => {
 
         <section className="grid gap-7 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {allGames.map(game => (
-            <GameCard key={game.id} />
+            <GameCard key={game.id} game={game} />
           ))}
         </section>
       </Container>

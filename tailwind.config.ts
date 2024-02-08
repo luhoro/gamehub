@@ -15,6 +15,9 @@ const config: Config = {
       },
       dropShadow: {
         'intense': '0 5px 10px #000000'
+      },
+      boxShadow: {
+        'medium': '0 3px 15px #00000030'
       }
     },
   },
