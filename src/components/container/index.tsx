@@ -2,7 +2,7 @@ import { ReactNode } from 'react'
 
 const Container = ( {children}: {children: ReactNode}) => {
   return (
-    <div className="max-w-screen-xl mx-auto px-3">
+    <div className="max-w-screen-xl mx-auto px-8">
       {children}
     </div>
   )
