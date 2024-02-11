@@ -10,10 +10,10 @@ interface GameCardProps {
 const GameCard = ({ game }: GameCardProps) => {
   return (
     <Link href={`/game/${game.id}`}>
-      <section className="w-full bg rounded-lg p-4 mb-5 shadow-medium">
-        <div className="relative w-full h-56 hover:scale-105 transition-all duration-300">
+      <section className="w-full bg rounded-lg p-4 mb-5 transition-all duration-300 hover:shadow-medium hover:bg-white">
+        <div className="relative w-full h-56">
           <Image
-            className="rounded-md object-cover"
+            className="rounded-md object-cover "
             src={game.image_url}
             alt={game.title}
             fill={true}
@@ -22,14 +22,11 @@ const GameCard = ({ game }: GameCardProps) => {
           />
         </div>
 
-        <div className="flex items-center mt-2 justify-between">
-          <p className="text-sm font-bold text-ellipsis truncate whitespace-nowrap overflow-hidden">
+        <div className="flex items-center mt-3 justify-between border-b border-main-blue">
+          <p className="text-sm font-bold py-1 text-ellipsis truncate whitespace-nowrap overflow-hidden">
             {game.title}
           </p>
-          <BiRightArrowCircle
-            size={24}
-            color="#505050"
-          />
+          <BiRightArrowCircle size={24} color="#3865d7" />
         </div>
       </section>
     </Link>

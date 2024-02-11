@@ -16,14 +16,14 @@ const SearchInput = () => {
 
   return (
     <form onSubmit={handleSearch} 
-      className="w-full bg-white my-5 p-2 flex gap-4 items-center justify-between"
+      className="w-full bg-white my-5 p-2 rounded-lg flex gap-4 items-center justify-between"
     >
       <input 
         type="text" 
         placeholder="Procurando algum jogo?"
         value={input}
         onChange={event => setInput(event.target.value)}
-        className="w-full outline-none focus:border-b border-blue-300"
+        className="w-full outline-none focus:border-b border-main-blue"
       />
 
       <button type="submit">

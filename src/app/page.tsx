@@ -43,7 +43,7 @@ export const Home = async () => {
 
         <Link href={`/game/${dailyGame.id}`}>
           <section className="w-full bg-black rounded-lg">
-            <div className="relative h-96 max-h-96 rounded-lg">
+            <div className="relative h-96 max-h-96 rounded-lg group">
               <div className="absolute bottom-0 z-10 p-4 flex gap-4 items-center">
                 <p className="font-bold text-xl text-white drop-shadow-intense">
                   {dailyGame.title}
@@ -58,7 +58,7 @@ export const Home = async () => {
                 quality={100}
                 fill={true}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw"
-                className="max-h-96 object-cover rounded lg opacity-60 hover:opacity-90 transition-all duration-200"
+                className="max-h-96 object-cover rounded lg opacity-60 group-hover:opacity-90 transition-all duration-200"
               />
             </div>
           </section>
