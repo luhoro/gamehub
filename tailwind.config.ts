@@ -20,7 +20,8 @@ const config: Config = {
         'intense': '0 5px 10px #000000'
       },
       boxShadow: {
-        'medium': '0 3px 15px #00000030'
+        'medium': '0 3px 15px #00000030',
+        'light': '0 1px 10px #00000020'
       }
     },
   },
