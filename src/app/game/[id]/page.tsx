@@ -5,6 +5,53 @@ import React from "react"
 import Container from "@/components/container"
 import Label from "./components/label"
 import GameCard from "@/components/gameCard"
+import { Metadata } from "next"
+
+interface paramsProps {
+  params: {
+    id: string
+  }
+}
+
+export const generateMetadata = async ({
+  params,
+}: paramsProps): Promise<Metadata> => {
+  try {
+    const response: GameProps = await fetch(
+      `${process.env.NEXT_API_URL}/next-api/?api=game&id=${params.id}`,
+      { next: { revalidate: 60 } }
+    )
+      .then(res => res.json())
+      .catch(() => {
+        return {
+          title: "GameHub - O seu arsenal de jogos",
+        }
+      })
+
+    return {
+      title: response.title,
+      description: `${response.description.slice(0, 70)}...`,
+      openGraph: {
+        title: response.title,
+        images: [response.image_url],
+      },
+      robots: {
+        index: true,
+        follow: true,
+        nocache: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          noimageindex: true,
+        },
+      },
+    }
+  } catch (error) {
+    return {
+      title: "GameHub - O seu arsenal de jogos",
+    }
+  }
+}
 
 const getGame = async (id: string) => {
   try {
@@ -71,7 +118,9 @@ const Game = async ({ params: { id } }: { params: { id: string } }) => {
         </div>
 
         <div className="mt-10 py-2 px-4 font-medium border border-main-blue rounded-md w-fit cursor-default">
-          <p><strong className="">Data de lançamento:</strong> {game.release}</p>
+          <p>
+            <strong className="">Data de lançamento:</strong> {game.release}
+          </p>
         </div>
 
         <h2 className="text-lg font-bold mt-14 mb-3">Jogo recomendado</h2>
