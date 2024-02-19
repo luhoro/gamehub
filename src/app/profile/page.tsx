@@ -2,6 +2,13 @@ import Container from "@/components/container"
 import Image from "next/image"
 import userImg from "/public/user.svg"
 import { FaShareAlt } from "react-icons/fa"
+import FavoriteCard from "./components/favoriteCard"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Meu perfil | GameHub - O seu arsenal de jogos",
+  description: "Perfil Maria Neves | GameHub - O seu arsenal de jogos"
+}
 
 const Profile = () => {
   return (
@@ -19,15 +26,22 @@ const Profile = () => {
           </div>
 
           <div className="flex gap-4 sm:self-start">
-            <button className="bg-white shadow-light hover:shadow-medium font-medium p-2 rounded-xl duration-200">
+            <button className="bg-dark-gray text-white hover:opacity-80 font-medium p-2 rounded-lg duration-200">
               Configurações
             </button>
 
-            <button className="bg-white shadow-light hover:shadow-medium p-2 rounded-xl duration-200">
-              <FaShareAlt size={24} color="" />
+            <button className="bg-dark-gray hover:opacity-80 p-2 rounded-lg duration-200">
+              <FaShareAlt size={24} color="#ffffff" />
             </button>
           </div>
+        </section>
 
+        <section className="flex flex-wrap gap-5 flex-col md:flex-row">
+          <FavoriteCard />
+
+          <FavoriteCard />
+
+          <FavoriteCard />
         </section>
       </Container>
     </main>
