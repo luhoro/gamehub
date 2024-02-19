@@ -22,7 +22,7 @@ const getDailyGame = async () => {
 const getAllGames = async () => {
   try {
     const res = await fetch(`${process.env.NEXT_API_URL}/next-api/?api=games`, {
-      next: { revalidate: 320 },
+      next: { revalidate: 320 }
     })
     return res.json()
   } catch (error) {
